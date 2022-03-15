@@ -25,17 +25,16 @@ def avg_data(year):
                 if i != 'NoData' and i != 'PwrFail' and i!= '---' and i != 'InVld':
                     temp = float(i)
                     add_var += temp
-        
         avg = add_var/24
         temp_i += 1
-        
+
         average.append(avg)
     return average
 
 if __name__ == "__main__":
     for year in range(2013,2019):
         globals()[f"lst{year}"] = avg_data(year)
-        
+
     plt.plot(range(0,365),lst2013,label="2013 data")
     plt.plot(range(0,364),lst2014,label="2014 data")
     plt.plot(range(0,365),lst2015,label="2015 data")
